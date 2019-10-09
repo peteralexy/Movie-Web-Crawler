@@ -1,0 +1,13 @@
+{% extends "movies/base.html" %}
+
+{% block content %}
+    <div class="main_row">
+    {{ value }}
+        <h2>Add a new film!</h2>
+        <form action="{% url 'movies:new_film' %}" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button name="submit" class="cool-button">Add!</button>
+        </form>
+    </div>
+{% endblock content %}

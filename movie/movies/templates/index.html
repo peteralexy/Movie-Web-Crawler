@@ -1,0 +1,16 @@
+{% extends 'movies/base.html' %}
+
+{% block content %}
+    <div class="main_row_index">
+        <h2>Cinemagia~</h2>
+        <a href="{% url 'movies:new_film' %}" class="fancy_button">Add a new film</a>
+        <p style="clear:both;padding-top:50px">Pressing the Add button allows the user</p>
+        <p>to add to the database a new movie</p>
+        <p>that will include the most important information</p>
+        <p>that the scrapper will offer us.</p>
+    </div>
+    <div class="side_row">
+        <h2>side row</h2>
+        <p>add stuff here</p>
+    </div>
+{% endblock content %}

@@ -1,0 +1,26 @@
+{% extends 'movies/base.html' %}
+
+{% block content %}
+    <div class="main_row_films" style="padding: 25px">
+        <h1>*{{ film.film_name }}</h1>
+        <h2>Directed by: {{ film.director_name }}</h2>
+        <h3>Leading roles:</h3>
+        <ul style="list-style-type: none;">
+        {% for actor in actors %}
+            <li>
+                <h3>{{ actor.actor_name }}</h3>
+            </li>
+        {% empty %}
+            <h2>
+                There are no actors registered for the movie.
+            </h2>
+        {% endfor %}
+        </ul>
+        <p>Release Date: {{ film.release_date }}</p>
+        <p>Runtime: {{ film.movie_runtime }} min</p>
+        <a class="fancy_button" href="{% url 'movies:films' %}">Return</a>
+    </div>
+    <div class="side_row_films" style="padding: 10px">
+        <p><img src="https://{{ film.movie_poster }}" class="poster"></p>
+    </div>
+{% endblock content %}

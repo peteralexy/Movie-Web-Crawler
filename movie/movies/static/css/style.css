@@ -1,0 +1,158 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 0;
+}
+
+.header {
+    padding: 60px;
+    text-align: center;
+    /*
+    background: #6CD6E2;
+    */
+    background: white;
+    color: rgb(175, 4, 175);
+}
+
+.bar {
+    display: flex;
+    /*
+    background-color: #0A69A8;
+    */
+    background-color: rgb(175, 4, 175);
+}
+
+.bar a {
+    color: white;
+    padding: 16px 20px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.bar a:hover {
+    transition: background-color 1s, color 1s;
+    background-color: white;
+    /*
+    color: #0A69A8;
+    */
+    color: rgb(175, 4, 175);
+}
+
+.footer {
+    padding: 5px;
+    text-align: left;
+    color: white;
+    /*
+    background-color: #6CD6E2;
+    */
+    background-color: rgb(197, 54, 178);
+    text-align: right;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.main_row {
+    flex: 100%;
+    padding: 20px;
+    background-color: white;
+}
+
+.main_row_index {
+    flex: 80%;
+    padding: 20px;
+    background-color: white;
+}
+
+.main_row_films {
+    flex: 50%;
+}
+
+.side_row {
+    flex: 20%;
+    padding: 20px;
+}
+
+.side_row_films {
+    flex: 50%;
+    padding-left: 10px;
+}
+
+.fancy_button {
+    text-decoration: none;
+    padding: 24px;
+    /*
+    background-color: #0A69A8;
+    */
+    background-color: rgb(175, 4, 175);
+    color: white;
+    float: left;
+    clear: left;
+}
+
+.fancy_button:hover {
+    background-color: rgb(197, 54, 178);
+    transition: background-color 0.5s;
+}
+
+.bar_movies {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    color: black;
+    /*
+    background-color: #76B5FD;
+    */
+    background-color: rgb(131, 6, 100);
+}
+
+.bar_movies li {
+    /*
+    border-bottom: 1px solid black;
+    */
+    color: white;
+}
+
+.bar_movies li:last-child{
+    border-bottom: none;
+}
+
+.bar_movies li a {
+    display: block;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+.bar_movies li a:hover:not(.active) {
+    background-color: 0A69A8;
+    color: white;
+}
+
+.bar_movies li a:first-child:hover:not(.active){
+    /*
+    border-top: 1px solid black;
+    */
+    background-color: rgb(155, 60, 155);
+    color: white;
+    transition: background-color 0.5s;
+}
+
+.cool-button {
+    padding: 15px;
+    background-color: rgb(175, 4, 175);
+    color: white;
+    text-decoration: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.poster {
+    width: 57%;
+    margin-left: 20%;
+}
