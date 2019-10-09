@@ -32,11 +32,14 @@ def new_film(request):
             new_movie = Film()
             #give the form value to the name
             new_movie.film_name = form.data['film_name']
+            #give the film its name
             movie_name = new_movie.film_name
+            #split the words to for the url
             movie_name = movie_name.split()
+            #keep these lower case
             smallWords = ['and', 'or', 'the', 'of', 'film']
             card_dict = {}
-            #filter certain symbols such as %
+            #filter certain symbols such as & and '
             for word in movie_name:
                 if word not in smallWords:
                     word = word.title()
@@ -72,23 +75,26 @@ def new_film(request):
                     #pass
                     #print(value.getText())
                     card_dict[role[0].getText()] = value.getText()
-
+            #removing things like [1] [2] that appear at the end of certain attributes
             for key, value in card_dict.items():
                 if value[-1] == ']':
                     card_dict[key] = value[:-3]
             #creating an actor array from an actor string
             actor_array = card_dict['Starring'].split('\n')
+            #the first and last actors are a null string ''
+            #remove them from the array
             actor_array.pop(0)
             actor_array.pop(-1)
             card_dict['Starring'] = actor_array
             #editing the release date to look better
             r_date = card_dict['Release date']
+            #format date, remove the comma at the end of the day number and monthd
             new_date = r_date.split()
             if new_date[1][1] == "," and len(new_date[1]) == 2:
                 new_date[1] = new_date[1][:1]
             elif new_date[1][2] == ",":
                 new_date[1] = new_date[1][:2]
-
+            #date appearance
             last_date = new_date[2] + "-" + new_date[0] + "-" + new_date[1]
             card_dict['Release date'] = last_date
             #runtime
